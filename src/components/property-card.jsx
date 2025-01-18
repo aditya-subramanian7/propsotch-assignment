@@ -202,7 +202,8 @@ export default function PropertyCard({ views, location, date, rating, isMostLike
                 display: "flex",
                 justifyContent: "space-between",
                 fontSize: "14px",
-                padding: "2px 8px"
+                padding: "2px 8px",
+                alignItems:"center"
             }}>
                 <div>
                     <p>👁️‍🗨️ {formatIndianNumber(views)}</p>

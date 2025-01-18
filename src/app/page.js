@@ -4,46 +4,41 @@ import { properties } from "./data/properties";
 export default function Home() {
   return (
     <>
-      <main
-        style={{
+      <main style={{
+        display: "flex",
+        justifyContent: "center",
+      }}>
+        <div style={{
           display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            paddingTop: "16px",
-            gap: "10px",
-            paddingLeft: "16px",
-            paddingRight: "16px",
-          }}
-        >
-          {properties
-            .reduce((acc, _, index, array) => {
-              if (index % 2 === 0) {
-                acc.push(array.slice(index, index + 2)); // Group items in pairs of 2
-              }
-              return acc;
-            }, [])
-            .map((pair, pairIndex) => (
-              <div key={pairIndex} style={{ display: "flex", gap: "10px" }}>
-                {pair.map((property, index) => (
-                  <PropertyCard
-                    key={`${pairIndex}-${index}`}
-                    date={property.date}
-                    imagePath={property.imagePath}
-                    isMostLiked={property.isMostLiked}
-                    // name={property.name}
-                    location={property.location}
-                    views={property.views}
-                    rating={property.rating}
-                    index={property.index}
-                  />
-                ))}
-              </div>
-            ))}
+          flexDirection: "row",
+          paddingTop: "16px",
+          gap: "10px",
+          paddingLeft: "16px",
+          paddingRight: "16px"
+        }}>
+          {properties.map(()=>{})}
+          <PropertyCard
+            date={properties[0].date}
+            imagePath={properties[0].imagePath}
+            isMostLiked={properties[0].isMostLiked}
+            // name={properties[0].name}
+            location={properties[0].location}
+            views={properties[0].views}
+            rating={properties[0].rating}
+            key={0}
+            index={properties[0].index}
+          />
+          <PropertyCard
+            date={properties[1].date}
+            imagePath={properties[1].imagePath}
+            isMostLiked={properties[1].isMostLiked}
+            // name={properties[1].name}
+            views={properties[1].views}
+            rating={properties[1].rating}
+            location={properties[1].location}
+            key={1}
+            index={properties[1].index}
+          />
         </div>
       </main>
     </>
