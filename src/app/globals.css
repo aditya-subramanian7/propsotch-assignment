@@ -3,11 +3,24 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+/* tablet range */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* Styles for tablets */
+
+  page-container{
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 html,
