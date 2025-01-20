@@ -4,17 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation"
 
-export default function PropertyCard({ views, location, date, rating, isMostLiked, index }) {
+export default function PropertyCard({ views, location, date, rating, isMostLiked, index,carouselImages }) {
     const [isLiked, setIsLiked] = useState(false);
     const [currImgIndex, setCurrImgIndex] = useState(0);
     const [slideDirection, setSlideDirection] = useState('none');
-
-    const carouselImages = [
-        "https://s3-alpha-sig.figma.com/img/aea6/2809/4c461cf6ea5efc5ec03157d9b758ee34?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IxeXxojgyV4zFIj6sBWgOGCidD3bwSUXIUM4u~zScN8JmD5mb5QGoy-xkTjXpUAvgWtZ8Ff9gaLfpYJb~b-kbxYIllk89bEKURNHpE743QIYdZRE6WHuwQ2tud0Zyl10YQ9HUJog46lZ2k4NAcTjyvHLIRp-DveoqJvq4p7GCizY3dKAZ5l-sbLZ3Sapdv2RZyMQ9dcpaR9p5V~yY4N5lJh8hqlh9uSBPxl-Y5wrho5mhcpncrGK~7N-rtdqZjNG2k9m50Ka~kvPO9iYAHwYAD3F~-BnupiWwIIOOH7H9zLbg8Ns-6NJxj4QRvbg3JckWpjqTrJePC1RRrDQv6xsNQ__",
-        "https://s3-alpha-sig.figma.com/img/d55a/569c/2ca1635723246683d1944ec89586d547?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=g3QsIyrKiZy3exwrNXwNnDjx8C23~HEgEoXQuZYzj1EdvfotPnU3la~uSlmirgrnuy0OLocOMOhz6X7tCh9N8QdnQIN67R2kJs5JcK8T~D9tZcyHtOIzJikQz38g-2wRP~ezh6j~LlFtCf-W08irZQOFOlD2Lw4VRFUeXsKNbW3cx7flsQqOggHlbKZW9ZWaxN4ozU8N1ngXtPQNliVeIosmP-sHnKOT2rvYQQXgLkF~gWzPzRBRQxfflNYgrnSuVIs3WUfHkiNIBCzCFtU~jpoPehJhoOST2uQ2ArEyLRCl5HZSPbf0MLGT8W34F2pwSM~a3BeUPwHqBqqb9eO9ug__",
-        "https://s3-alpha-sig.figma.com/img/aea6/2809/4c461cf6ea5efc5ec03157d9b758ee34?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IxeXxojgyV4zFIj6sBWgOGCidD3bwSUXIUM4u~zScN8JmD5mb5QGoy-xkTjXpUAvgWtZ8Ff9gaLfpYJb~b-kbxYIllk89bEKURNHpE743QIYdZRE6WHuwQ2tud0Zyl10YQ9HUJog46lZ2k4NAcTjyvHLIRp-DveoqJvq4p7GCizY3dKAZ5l-sbLZ3Sapdv2RZyMQ9dcpaR9p5V~yY4N5lJh8hqlh9uSBPxl-Y5wrho5mhcpncrGK~7N-rtdqZjNG2k9m50Ka~kvPO9iYAHwYAD3F~-BnupiWwIIOOH7H9zLbg8Ns-6NJxj4QRvbg3JckWpjqTrJePC1RRrDQv6xsNQ__",
-        "https://s3-alpha-sig.figma.com/img/d55a/569c/2ca1635723246683d1944ec89586d547?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=g3QsIyrKiZy3exwrNXwNnDjx8C23~HEgEoXQuZYzj1EdvfotPnU3la~uSlmirgrnuy0OLocOMOhz6X7tCh9N8QdnQIN67R2kJs5JcK8T~D9tZcyHtOIzJikQz38g-2wRP~ezh6j~LlFtCf-W08irZQOFOlD2Lw4VRFUeXsKNbW3cx7flsQqOggHlbKZW9ZWaxN4ozU8N1ngXtPQNliVeIosmP-sHnKOT2rvYQQXgLkF~gWzPzRBRQxfflNYgrnSuVIs3WUfHkiNIBCzCFtU~jpoPehJhoOST2uQ2ArEyLRCl5HZSPbf0MLGT8W34F2pwSM~a3BeUPwHqBqqb9eO9ug__",
-    ];
 
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);

@@ -21,23 +21,23 @@ export default function Home() {
             date={properties[0].date}
             imagePath={properties[0].imagePath}
             isMostLiked={properties[0].isMostLiked}
-            // name={properties[0].name}
             location={properties[0].location}
             views={properties[0].views}
             rating={properties[0].rating}
             key={0}
             index={properties[0].index}
+            carouselImages={properties[0].carouselImages}
           />
           <PropertyCard
             date={properties[1].date}
             imagePath={properties[1].imagePath}
             isMostLiked={properties[1].isMostLiked}
-            // name={properties[1].name}
             views={properties[1].views}
             rating={properties[1].rating}
             location={properties[1].location}
             key={1}
             index={properties[1].index}
+            carouselImages={properties[0].carouselImages}
           />
         </div>
       </main>
